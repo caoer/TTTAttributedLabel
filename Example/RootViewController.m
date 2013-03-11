@@ -69,6 +69,14 @@
     }
     
     NSString *description = [self.espressos objectAtIndex:indexPath.row];
+    if (indexPath.row % 2 == 0) {
+        cell.summaryLabel.numberOfLines = 2;
+        cell.summaryLabel.lineBreakMode = UILineBreakModeWordWrap;
+    }
+    else {
+        cell.summaryLabel.numberOfLines = 2;
+        cell.summaryLabel.lineBreakMode = UILineBreakModeTailTruncation;
+    }
     cell.summaryText = description;
     cell.summaryLabel.delegate = self;
     cell.summaryLabel.userInteractionEnabled = YES;
